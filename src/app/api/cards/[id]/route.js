@@ -2,7 +2,7 @@ import dbConnect from "@/lib/mongodb"; // Adjust the import based on your projec
 import Card from "@/models/Card"; // Adjust the import based on your project structure
 
 export async function DELETE(req, { params }) {
-  const { id } = params; // Get the card ID from URL params
+  const { id } = await params; // Get the card ID from URL params
 
   await dbConnect();
 
@@ -25,7 +25,7 @@ export async function DELETE(req, { params }) {
 }
 export async function PUT(request, { params }) {
   await dbConnect();
-  const { id } = params;
+  const { id } = await params;
   const cardData = await request.json();
 
   try {

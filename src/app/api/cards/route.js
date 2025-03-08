@@ -1,6 +1,8 @@
 import connectToDatabase from "../../../lib/mongodb";
 import Card from "../../../models/Card";
 
+
+
 export async function GET() {
   await connectToDatabase();
   const cards = await Card.find();
