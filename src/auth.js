@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import connectToDatabase from "@/lib/mongodb";
 import User from "@/models/User";
 
-const admins = ["andreasprager08@gmail.com", "rangerbillthaxton@gmail.com"];
+const admins = ["andreasprager08@gmail.com"];
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   providers: [
