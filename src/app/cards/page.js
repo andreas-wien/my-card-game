@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Card from '@/components/Card';
+import Navbar from '@/components/Navbar';
 
 function CardList() {
   const [cards, setCards] = useState([]);
@@ -16,10 +17,13 @@ function CardList() {
   }, []);
 
   return (
-    <div className="card-list">
-      {cards.map((card) => (
-        <Card key={card._id} card={card} />
-      ))}
+    <div>
+      <Navbar />
+      <div className="card-list">
+        {cards.map((card) => (
+          <Card key={card._id} card={card} />
+        ))}
+      </div>
     </div>
   );
 }

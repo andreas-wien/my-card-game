@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Card from "@/components/Card";
+import Navbar from "@/components/Navbar";
 
 export default function DeckBuilder() {
   const [userData, setUserData] = useState(null);
@@ -81,6 +82,7 @@ export default function DeckBuilder() {
 
   return (
     <div>
+      <Navbar />
       <h1>Deck Builder</h1>
       <input
         type="text"
