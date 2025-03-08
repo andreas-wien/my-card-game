@@ -79,6 +79,14 @@ textarea {
   color: white;
   border: none;
   border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -99,13 +107,107 @@ p {
   color: rgb(43, 42, 48);
 }
 
+/* Styling for the Deck Builder page */
+.deck-builder-container {
+  padding: 20px;
+}
+
+h1,
+h2 {
+  font-family: "Arial", sans-serif;
+  color: var(--foreground);
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: black;
+  font-weight: bold;
+  cursor: not-allowed;
+}
+
+/* Layout for the collected cards section */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-container button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.card-container p {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Styling for selected cards */
+.selected-card {
+  padding: 10px;
+  margin: 10px;
+  background-color: #463838; /* Lighter background color for better contrast */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.selected-card p {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--foreground);
+}
+
+.selected-card button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #f44336; /* Red background for remove button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.selected-card button:hover {
+  background-color: #d32f2f;
+}
+
 /* Styling for the card list */
 .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
-  justify-items: center;
 }
 
 /* Card styling */
@@ -163,9 +265,11 @@ p {
 .btn-signin,
 .btn-signout {
   padding: 10px 20px;
+  margin: 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
   display: flex;
   align-items: center;
 }
@@ -196,4 +300,18 @@ p {
 span {
   font-weight: 1000;
   color: #e6dbdb;
+}
+
+.save-deck-btn {
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  background-color: #4285f4;
+  color: white;
+  border: none;
 }

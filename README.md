@@ -7,7 +7,7 @@ There are 3 types of cards:
 - Equipment
 
 ## Mana
-Every card is associated with a cost of mana, which builds up over the course of a match. It starts at 1 for the starting player and 2 for the second player to make up for the starting advantage of player 1. As mentioned mana is increased by 1 every turn until it reaches the maximum of 10. Mana is restored every turn.
+Every card is associated with a cost of mana, which builds up over the course of a match. It starts at 1 for the starting player and 2 for the second player to make up for the starting advantage of player 1. As mentioned mana is increased by 1 every turn until it reaches the maximum of 12. Mana is restored every turn.
 
 ## Monsters
 Monsters are the main actors on the board. They have 3 distinguishing stats:

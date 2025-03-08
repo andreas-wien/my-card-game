@@ -1,5 +1,5 @@
-import dbConnect from "@/lib/mongodb"; // Adjust the import based on your project structure
-import Card from "@/models/Card"; // Adjust the import based on your project structure
+import dbConnect from "@/lib/mongodb";
+import Card from "@/models/Card";
 
 export async function DELETE(req, { params }) {
   const { id } = await params; // Get the card ID from URL params

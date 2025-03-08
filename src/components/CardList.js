@@ -54,7 +54,6 @@ export default function CardList() {
         setMessage("Card updated successfully!");
         setEditMode(false);
         setSelectedCard(null);
-        // Re-fetch the cards
         const res2 = await fetch("/api/cards");
         const data = await res2.json();
         setCards(data);
@@ -166,6 +165,16 @@ export default function CardList() {
             </>
           )}
           <div>
+            <label htmlFor="imageUrl">Image:</label>
+            <input
+              id="imageUrl"
+              type="text"
+              value={selectedCard.imageUrl || 0}
+              onChange={(e) => handleChange("imageUrl", e.target.value)}
+              required
+            />
+          </div>
+          <div>
             <label htmlFor="effect">Card Effect:</label>
             <textarea
               id="effect"
@@ -192,7 +201,6 @@ export default function CardList() {
       <div className="card-list">
         {cards.map((card) => (
           <div key={card._id} className="card border p-4 m-2 rounded">
-            {/* Using Card component */}
             <Card card={card} />
             <button
               onClick={() => {

@@ -13,8 +13,11 @@ function getRarityCategory(rarityScore) {
   return "Legendary";
 }
 
-export default function Card({ card }) {
-  const rarity = useMemo(() => getRarityCategory(card.rarityScore), [card.rarityScore]);
+export default function Card({ card, quantity }) {
+  const rarity = useMemo(
+    () => getRarityCategory(card.rarityScore),
+    [card.rarityScore]
+  );
 
   if (!card || !card.name) {
     return <div className="text-center text-red-500">Invalid Card Data</div>;
@@ -38,7 +41,9 @@ export default function Card({ card }) {
           loading="lazy"
         />
       ) : (
-        <div className="mb-2 mx-auto w-32 h-32 bg-gray-200 flex items-center justify-center text-center text-gray-500">No Image</div>
+        <div className="mb-2 mx-auto w-32 h-32 bg-gray-200 flex items-center justify-center text-center text-gray-500">
+          No Image
+        </div>
       )}
       <div className="card-body mb-2">
         <p>
@@ -77,6 +82,13 @@ export default function Card({ card }) {
           <strong>Effect:</strong> {card.effect}
         </p>
       </div>
+      {quantity !== undefined && (
+        <div className="card-quantity mt-2">
+          <p>
+            <strong>Quantity:</strong> x{quantity}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

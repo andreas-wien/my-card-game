@@ -1,7 +1,5 @@
-import connectToDatabase from "../../../lib/mongodb";
-import Card from "../../../models/Card";
-
-
+import connectToDatabase from "@/lib/mongodb";
+import Card from "@/models/Card";
 
 export async function GET() {
   await connectToDatabase();
@@ -12,7 +10,6 @@ export async function GET() {
 export async function POST(request) {
   await connectToDatabase();
   const cardData = await request.json();
-  console.log(cardData);
   const newCard = new Card(cardData);
   await newCard.save();
   return new Response(JSON.stringify(newCard), { status: 201 });
