@@ -48,3 +48,25 @@ export async function PUT(request, { params }) {
     );
   }
 }
+export async function GET(req, { params }) {
+  const { id } = params; // Get the card ID from the URL params
+
+  await dbConnect();
+
+  try {
+    const card = await Card.findById(id); // Find the card by its ID
+    if (!card) {
+      return new Response(JSON.stringify({ message: "Card not found" }), {
+        status: 404,
+      });
+    }
+    return new Response(JSON.stringify(card), { status: 200 });
+  } catch (error) {
+    return new Response(
+      JSON.stringify({ message: "Error fetching card", error: error.message }),
+      {
+        status: 500,
+      }
+    );
+  }
+}

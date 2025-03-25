@@ -11,7 +11,7 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "mongoose": "^8.12.1",
-    "next": "15.2.1",
+    "next": "^15.2.4",
     "next-auth": "^5.0.0-beta.25",
     "pusher": "^5.2.0",
     "pusher-js": "^8.4.0",
